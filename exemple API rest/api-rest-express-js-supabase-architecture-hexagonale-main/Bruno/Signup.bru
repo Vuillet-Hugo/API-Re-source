@@ -1,0 +1,20 @@
+meta {
+  name: Signup
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:3333/auth/signup
+  body: json
+  auth: basic
+}
+
+auth:basic {
+  username: john@doe.com
+  password: azerty
+}
+
+body:json {
+  {"firstname":"James","lastname":"Smith","login":"james13@smith.com","password":"azerty"}
+}
