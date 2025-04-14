@@ -9,15 +9,15 @@ const router = express.Router();
 
 router
   .route("/")
-  .get(getRessourcesAction) //call getRessourcesAction method and transmit req, res, next argument
+  .get(getRessourcesAction)
   .post(createRessourceAction)
-  .all((req, res, next) => next(405)); //method not allowed
+  .all((req, res, next) => next(405));
 
 router
   .route("/:id")
   .delete(deleteRessourceAction)
   .patch(updateRessourceAction)
-  .get(getOneRessourceAction) //call getRessourcesAction method and transmit req, res, next argument
-  .all((req, res, next) => next(405)); //method not allowed
+  .get(getOneRessourceAction) 
+  .all((req, res, next) => next(405)); 
 
 export default router;
