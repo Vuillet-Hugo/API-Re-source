@@ -231,6 +231,31 @@ Authorization: Basic base64(email:password)
 
 La chaîne `email:password` sera encodée en Base64 et envoyée dans l'en-tête.
 
+### Commentaires
+
+Vous pouvez créez et afficher des commentaires
+
+#### 1. **POST**
+
+**Paramètre**
+  {
+    "utilisateurID": 4,
+    "ressourceID": 1, (l'ID de la ressource du com)
+    "contenue": "premier commentaire de fou",
+    "date": "12/03/2025",
+    "nbLike": 0,
+    "nbReport":0,
+    "visible": true
+}
+
+#### 2. **GET**
+
+**Paramètre**
+  {
+    id : 4 (l'ID de la ressource pour récup tout ces commentaires)
+  }
+
+
 ## Exemples de requêtes avec Postman
 
 1. **GET** `/users` - Récupérer tous les utilisateurs
@@ -241,6 +266,8 @@ La chaîne `email:password` sera encodée en Base64 et envoyée dans l'en-tête.
 6. **POST** `/ressources` - Créer une ressource
 7. **PATCH** `/ressources/1` - Mettre à jour la ressource avec l'ID `1`
 8. **DELETE** `/ressources/1` - Supprimer la ressource avec l'ID `1`
+8. **POST** `/Commentaires` - Créer un nouveau commentaire
+8. **GET** `/Commentaires/1` - Récupere les commentaires de la ressource qui a l'ID `1`
 
 ---
 

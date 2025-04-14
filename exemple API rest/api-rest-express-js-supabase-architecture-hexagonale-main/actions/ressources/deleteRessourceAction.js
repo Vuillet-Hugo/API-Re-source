@@ -1,4 +1,4 @@
-import { deleteRessourceFromDataSource } from "../../repositories/SupaBaseressourceRepository.js";
+import { deleteRessourceFromDataSource } from "../../repositories/SupaBaseRessourceRepository.js";
 
 export default async (req, res, next) => {
   try {

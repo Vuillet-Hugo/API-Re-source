@@ -1,4 +1,4 @@
-import { createRessourceToDataSource } from "../../repositories/SupaBaseressourceRepository.js";
+import { createRessourceToDataSource } from "../../repositories/SupaBaseRessourceRepository.js";
 
 export default async (req, res, next) => {
   try {

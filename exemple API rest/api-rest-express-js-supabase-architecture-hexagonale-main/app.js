@@ -9,6 +9,7 @@ import indexRouter from "./routes/index.js";
 import ressourcesRouter from "./routes/ressources.js";
 import usersRouter from "./routes/users.js";
 import authRouter from "./routes/auth.js";
+import commentairesRouter from "./routes/commentaires.js";
 
 //middlewares
 import catch404Errors from "./middlewares/catch404errors.js";
@@ -27,6 +28,7 @@ app.use("/", indexRouter);
 app.use("/ressources", ressourcesRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
+app.use("/commentaires", commentairesRouter); 
 
 //génère une erreur 404 si aucune route n'a pas intercepté la requête HTTP
 app.use(catch404Errors);

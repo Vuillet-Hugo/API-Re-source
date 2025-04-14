@@ -1,4 +1,4 @@
-import { updateRessourceInDataSource } from "../../repositories/SupaBaseressourceRepository.js";
+import { updateRessourceInDataSource } from "../../repositories/SupaBaseRessourceRepository.js";
 
 export default async (req, res, next) => {
   try {

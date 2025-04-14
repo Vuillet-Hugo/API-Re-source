@@ -2,7 +2,7 @@ import { format } from "path";
 import {
   readOneRessourceByIdFromDataSource,
   readAllRessourcesFromDataSource
-} from "../repositories/SupaBaseressourceRepository.js";
+} from "../repositories/SupaBaseRessourceRepository.js";
 
 const readAllRessources = async () => {
   try {
