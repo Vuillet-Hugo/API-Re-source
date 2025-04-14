@@ -2,7 +2,7 @@
 
 import "dotenv/config";
 import axios from "axios";
-import { generateRefreshToken } from "./tokenService.js";
+ // import { generateRefreshToken } from "./tokenService.js";
 
 const axiosInstance = axios.create({
   baseURL: process.env.SUPABASE_URL,
@@ -10,16 +10,16 @@ const axiosInstance = axios.create({
   headers: { apikey: process.env.SUPABASE_API_KEY }
 });
 
-async function createUser(email, password, firstname, lastname) {
+async function createUser(email, motDePasse, prenom, nom) {
   try {
-    const refresh_token = await generateRefreshToken();
+   // const refresh_token = await generateRefreshToken();
 
-    const response = await axiosInstance.post(`/customers`, {
-      firstname,
-      lastname,
+    const response = await axiosInstance.post(`/rest/v1/utilisateur`, {
+      prenom,
+      nom,
       email,
-      password,
-      refresh_token
+      motDePasse,
+    //  refresh_token
     });
 
     if (!response.status === 201) {
@@ -39,7 +39,7 @@ async function createUser(email, password, firstname, lastname) {
 
 async function readAllUsers() {
   try {
-    const response = await axiosInstance.get(`/customers`);
+    const response = await axiosInstance.get(`/rest/v1/utilisateur`);
     const users = response.data;
     if (!users) {
       throw new Error("Can't read users");
@@ -58,8 +58,8 @@ async function readAllUsers() {
 
 async function readOneUserById(id) {
   try {
-    const response = await axiosInstance.get(`/customers?id=eq.${id}&select=*`);
-    const user = response.data[0];
+    const response = await axiosInstance.get(`/rest/v1/utilisateur?id=eq.${id}&select=*`);
+    const user = response.data[0]; 
 
     if (!user) {
       throw new Error(`Can't find user with id ${id}`);
@@ -77,7 +77,7 @@ async function readOneUserById(id) {
 async function readOneUserByEmail(email) {
   try {
     const response = await axiosInstance.get(
-      `/customers?email=eq.${email}&select=*`
+      `/rest/v1/utilisateur?email=eq.${email}&select=*`
     );
     const user = response.data[0];
     if (!user) {

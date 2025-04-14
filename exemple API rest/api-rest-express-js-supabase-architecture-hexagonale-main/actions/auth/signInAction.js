@@ -4,13 +4,13 @@ import { verifyCredentials } from "../../services/authenticationService.js";
 export default async (req, res, next) => {
   try {
     if (!req.headers.authorization) {
-      next(400);
+      return res.status(400).json({ error: "Authorization header missing" });
     } else {
-      const [login, password] = atob(
+      const [email, motDePasse] = atob(
         req.headers.authorization.split("Basic")[1]
       ).split(":");
 
-      const user = await verifyCredentials(login, password);
+      const user = await verifyCredentials(email, motDePasse);
 
       const payload = { user };
       const { access_token, refresh_token } =

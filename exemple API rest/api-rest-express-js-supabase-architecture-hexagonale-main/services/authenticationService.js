@@ -1,12 +1,12 @@
 import { readOneUserByEmail } from "./userService.js";
 import bcrypt from "bcrypt";
 
-const verifyCredentials = async (login, password) => {
+const verifyCredentials = async (email, motDePasse) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const user = await readOneUserByEmail(login);
+      const user = await readOneUserByEmail(email);
 
-      bcrypt.compare(password, user.password, (err, result) => {
+      bcrypt.compare(motDePasse, user.motDePasse, (err, result) => {
         if (err || !result) {
           reject("Bad credentials");
         } else {

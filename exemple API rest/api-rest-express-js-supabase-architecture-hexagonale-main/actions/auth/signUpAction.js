@@ -3,15 +3,15 @@ import { createUser } from "../../services/userService.js";
 
 export default async (req, res, next) => {
   try {
-    const { login, password, firstname, lastname } = req.body;
+    const { email, motDePasse, prenom, nom } = req.body;
 
-    if (!login || !password || !firstname || !lastname) {
+    if (!email || !motDePasse || !prenom || !nom) {
       next(400);
     }
 
-    const hash = await hashPassword(password);
+    const hash = await hashPassword(motDePasse);
 
-    const user = await createUser(login, hash, firstname, lastname);
+    const user = await createUser(email, hash, prenom, nom);
 
     user.password = "*****";
 

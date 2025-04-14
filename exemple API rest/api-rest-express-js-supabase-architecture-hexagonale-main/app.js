@@ -6,7 +6,7 @@ import cors from "cors";
 import helmet from "helmet";
 
 import indexRouter from "./routes/index.js";
-import pizzasRouter from "./routes/pizzas.js";
+import ressourcesRouter from "./routes/ressources.js";
 import usersRouter from "./routes/users.js";
 import authRouter from "./routes/auth.js";
 
@@ -24,7 +24,7 @@ app.use(express.json()); //parsing des données du body au format JSON
 app.use(express.urlencoded({ extended: false })); //parsing des données du body au format URL Encode
 
 app.use("/", indexRouter);
-app.use("/pizzas", pizzasRouter);
+app.use("/ressources", ressourcesRouter);
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 
