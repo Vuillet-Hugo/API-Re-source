@@ -130,20 +130,30 @@ Récupère toutes les ressources.
 - **Exemple de réponse** :
   ```json
   [
-    {
-      "id": 1,
-      "name": "Resource 1",
-      "ingredients": "ingredient1, ingredient2",
-      "price": 10.99,
-      "color": "red"
-    },
-    {
-      "id": 2,
-      "name": "Resource 2",
-      "ingredients": "ingredient3, ingredient4",
-      "price": 15.99,
-      "color": "blue"
-    }
+{
+  "id": 2
+  "nom": "Mon super titre 2",
+  "format": 2,
+  "contenue": "https://example.comhttps://example.comhttps://example.comhttps://example.comhttps://example.comhttps://example.com",
+  "description": "articlhttps://example.come",
+  "date": "12/02/2025",
+  "nbCom": 0,
+  "nbLike":0,
+  "nbReport":0,
+  "visible":true
+},
+{
+  "id": 3,
+  "nom": "Mon super titre 2",
+  "format": 2,
+  "contenue": "https://example.comhttps://example.comhttps://example.comhttps://example.comhttps://example.comhttps://example.com",
+  "description": "articlhttps://example.come",
+  "date": "12/02/2025",
+  "nbCom": 0,
+  "nbLike":0,
+  "nbReport":0,
+  "visible":true
+}
   ]
   ```
 
@@ -153,11 +163,16 @@ Crée une nouvelle ressource.
 - **Corps de la requête** :
   ```json
   {
-    "name": "New Resource",
-    "ingredients": "ingredient5, ingredient6",
-    "price": 20.99,
-    "color": "green"
-  }
+  "nom": "Mon super titre 2",
+  "format": 2,
+  "contenue": "https://example.comhttps://example.comhttps://example.comhttps://example.comhttps://example.comhttps://example.com",
+  "description": "articlhttps://example.come",
+  "date": "12/02/2025",
+  "nbCom": 0,
+  "nbLike":0,
+  "nbReport":0,
+  "visible":true
+}
   ```
 - **Réponse** : La ressource créée.
 - **Exemple de réponse** :
@@ -178,7 +193,7 @@ Mise à jour partielle d'une ressource.
 - **Corps de la requête** :
   ```json
   {
-    "price": 25.99
+    "contenue": "Lorem ipsum"
   }
   ```
 - **Réponse** : La ressource mise à jour.
